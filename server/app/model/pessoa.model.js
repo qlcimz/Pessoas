@@ -16,7 +16,7 @@ module.exports = (sequelize, Sequelize) => {
 		  type:Sequelize.STRING
 	  },
 	  ativo: {
-		type: Sequelize.BOOLEAN, defaultValue: false
+		type: Sequelize.STRING
 	  },
 	});
 	

@@ -11,12 +11,13 @@ module.exports = function(app) {
     // Encontrar todas as pessoas
     app.get('/api/pessoa', pessoa.findAll);
  
-    // Encontrar as pessoas por ID
+    // Encontrar as pessoas
     app.get('/api/pessoa/:pessoaId', pessoa.findById);
     app.get('/api/pessoa/nome/:nome', pessoa.findByNome);
  
     // Atualizar as pessoas com ID
-    app.put('/api/pessoa/:pessoaId', pessoa.update);
+   // app.put('/api/pessoa/:pessoaId', pessoa.update);
+   app.put('/api/pessoa/:pessoaId', pessoa.update);
  
     // Deletar pessoas a partir do ID
     app.delete('/api/pessoa/:pessoaId', pessoa.delete);

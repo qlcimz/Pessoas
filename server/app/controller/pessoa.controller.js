@@ -10,7 +10,8 @@ exports.create = (req, res) => {
 		nome: req.body.nome,
 		endereco: req.body.endereco,
 		email: req.body.email, 
-		sexo: req.body.sexo
+		sexo: req.body.sexo,
+		ativo: req.body.ativo
 	}).then(pessoa => {		
 		// Enviar pessoa para o cliente
 		res.send(pessoa);
@@ -57,8 +58,15 @@ exports.findByNome = (req, res) => {
 exports.update = (req, res) => {
 	var pessoa = req.body;
 	const id = req.params.pessoaId;
-	Pessoa.update( { name: req.body.name, endereco: req.body.endereco, email: req.body.email, sexo: req.body.sexo, ativo: req.body.ativo }, 
-						{ where: {id: req.params.pessoaId} }
+	console.log(req.body)
+	console.log(req.params.pessoaId)
+	Pessoa.update( { 
+		nome: req.body.nome, 
+		endereco: req.body.endereco, 
+		email: req.body.email, 
+		sexo: req.body.sexo, 
+		ativo: req.body.ativo }, 
+		{ where: {id: req.params.pessoaId} }
 				   ).then(() => {
 						res.status(200).send(pessoa);
 				   }).catch(err => {
